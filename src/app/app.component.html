@@ -7,9 +7,38 @@
 </div>
 <button [disabled]="!start" (click) = "onClick()">On click me!</button>
 <p>{{ line }}</p>
+
 <hr>
+
 <!-- <input type="text" #myInput (input)="onKeyUp(myInput.value)"> -->
 <input type="text" (keyup.enter) = "onKeyUp($event)">
 <input type="text" [(ngModel)] = "textInput">
 <p>{{ textInput }}</p>
+<button (click) = "add()">Add</button>
+<button (click) = "delete()">Delete</button>
+
+<hr>
+
+<div *ngIf="status; then first else second"></div>
+<ng-template #first><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, ad.</p></ng-template>
+<ng-template #second><p>Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные тексты.</p></ng-template>
+<button (click)="toggle()">Toggle</button>
+
+<hr>
+
+<ul>
+  <li *ngFor="let name of myArray; let i = index">
+    <div [ngStyle]="{'background-color': (i + 1) % 2 === 0 ? '#eee' : 'red' }" [ngClass]="{'bigtext' : bigText(name)}">{{ i + 1 }} : {{ name }}</div>
+  </li>
+</ul>
+
+<hr>
+
+<ul>
+  <li *ngFor="let date of dates; let index = index">{{ date | uppercase}}</li>
+</ul>
+
+<hr>
+
+<app-cars></app-cars>
 
