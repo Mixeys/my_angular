@@ -1,6 +1,4 @@
-<input type="text" [(ngModel)] = 'carName'>
-<input type="text" [(ngModel)] = 'carYear'>
-<button (click)='addCar()'>Add car</button>
+<app-add-car (onAddCar)="updateCarList($event)"></app-add-car>
 
 <hr>
 

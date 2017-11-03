@@ -7,7 +7,6 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CarComponent implements OnInit {
 
-  // @Input () car: {name: string, year: number};
  @Input() carItem: { name: string, year: number};
 
   constructor() { }
